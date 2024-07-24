@@ -1,0 +1,5 @@
+host: '0.0.0.0'
+port: 8912
+
+# Use texture hashes instead of UUIDs? This won't work when running a standalone AvatarServer. You'll need to always use hashes.
+use-texture-hashes: false

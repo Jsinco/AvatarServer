@@ -1,0 +1,4 @@
+name: AvatarServer
+main: dev.jsinco.avatarserver.AvatarServer
+version: ${version}
+api-version: '1.13'
