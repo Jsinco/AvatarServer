@@ -46,19 +46,16 @@ public final class ImageFactory {
     }
 
 
+
     public static BufferedImage overlayImages(BufferedImage background, BufferedImage foreground) {
         int width = Math.max(background.getWidth(), foreground.getWidth());
         int height = Math.max(background.getHeight(), foreground.getHeight());
 
-        BufferedImage combinedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB); // ARGB for transparency
+        BufferedImage combinedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = combinedImage.createGraphics();
 
-        // Draw the background image first
         g.drawImage(background, 0, 0, null);
-
-        // Draw the foreground image on top, specifying coordinates (adjust as needed)
-        g.drawImage(foreground, 10, 10, null); // Adjust x and y for desired placement
-
+        g.drawImage(foreground, 0, 0, null); // Adjust x and y for desired placement
         g.dispose(); // Dispose of the graphics context
         return combinedImage;
     }
