@@ -1,4 +1,4 @@
-package dev.jsinco.avatarserver;
+package dev.jsinco.avatarserver.image;
 
 import org.jetbrains.annotations.Nullable;
 

@@ -6,28 +6,21 @@ plugins {
 }
 
 group = "dev.jsinco.avatarserver"
-version = "1.1"
+version = "1.2"
 
 repositories {
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://repo.jsinco.dev/releases")
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT")
     implementation("org.eclipse.jetty:jetty-server:9.0.2.v20130417")
-    implementation("org.eclipse.jetty:jetty-io:9.0.2.v20130417")
-    implementation("org.eclipse.jetty:jetty-util:9.0.2.v20130417")
-    implementation("org.eclipse.jetty:jetty-servlet:9.0.2.v20130417")
-    implementation("org.eclipse.jetty:jetty-security:9.0.2.v20130417")
-    implementation("org.eclipse.jetty:jetty-http:9.0.2.v20130417")
+    implementation("dev.jsinco.abstractjavafilelib:AbstractJavaFileLib:2.4")
 }
 
 tasks {
-
-    java {
-        toolchain.languageVersion = JavaLanguageVersion.of(17)
-    }
 
     assemble {
         dependsOn(shadowJar)
@@ -44,8 +37,7 @@ tasks {
 
     shadowJar {
         dependencies {
-            //include(dependency("org.eclipse.jetty:jetty-server"))
-            //include(dependency("org.eclipse.jetty:jetty-webapp"))
+            // include all
         }
         archiveClassifier.set("")
     }
